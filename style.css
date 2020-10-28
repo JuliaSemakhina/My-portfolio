@@ -1,8 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+	--primary-color: rgba(13,110,139,0.75);
+	--overlay-color: rgba(24,39,51,0.85);
+	--menu-speed: 0.75s;
+
+}
+
+*, *::after, *::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.container {
+	max-width: 960px;
+	margin: auto;
+	overflow: hidden;
+	padding: 0.3rem;
+	
+}
+
+.showcase {
+	background-color: var(--primary-color);
+	color: #fff;
+	position: relative;
+	height: 100vh;
+	
+}
+
+.showcase:after {
+	content: '';
+	background: url(images/photo1.jpg) center no-repeat;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+.showcase .showcase-inner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 100%;
+}
+
+.showcase h1 {
+	font-size: 4rem;
+}
+
+.showcase p {
+	font-size: 1.3rem;
+}
+
+
 .menu-wrap {
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 1;
+	display: none;
 }
 
 .menu-wrap .toggler {
@@ -78,7 +151,6 @@
 
 .menu-wrap .toggler:checked ~ .menu {
 	visibility: visible;
-
 }
 
 .menu-wrap .toggler:checked ~ .menu > div {
@@ -138,4 +210,54 @@
 	transition: color 0.4s ease;
 }
 
+@media (max-width: 600px) {
+	.menu-wrap {
+		display: block;
+	}
+}
 
+
+/*Header*/
+
+.sidebar {
+	width: 80px;
+	height: 100vh;
+	background-color: var(--primary-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.sidebar ul li {
+	list-style: none;
+	color: #fff;
+	font-size: 1rem;
+	padding: .5rem;
+}
+
+.sidebar ul li a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.header-container {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background-color: #151617;
+}
+
+.big-box {
+	width: 250px;
+	height: 250px;
+	background-color: pink;
+	z-index: 20;
+	left: 250px;
+	top: 200px;
+	position: relative;
+}
